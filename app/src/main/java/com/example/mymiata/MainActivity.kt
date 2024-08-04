@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Set welcome message
         val username = "User" // Replace with dynamic username retrieval logic
-        welcomeTextView.text = "Welcome $username!"
+        val welcomeMessage = getString(R.string.welcome_message, username)
+        welcomeTextView.text = welcomeMessage
 
         // Initialize fuel gauge
         fuelGauge.speedTo(50F) // Example fuel level, replace with dynamic data
