@@ -9,11 +9,8 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.4"
 activityCompose = "1.9.1"
 composeBom = "2024.06.00"
-playServicesMaps = "19.0.0"
 playServicesMapsVersion = "19.0.0"
-speedview = "v1.5.0"
 constraintlayout = "2.1.4"
-speedviewlib = "1.6.1"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
