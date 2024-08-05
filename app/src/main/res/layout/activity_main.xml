@@ -21,47 +21,55 @@
         tools:ignore="VisualLintOverlap" />
 
     <!-- Car model and logo -->
+
     <TextView
         android:id="@+id/carModelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="312dp"
         android:text="@string/my_miata"
         android:textColor="#FF0000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
         tools:ignore="VisualLintOverlap" />
 
-    <ImageView
-        android:id="@+id/carLogoImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/car_image_description"
-        android:src="@drawable/mazda_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carModelTextView"
-        tools:ignore="VisualLintBounds" />
-
     <!-- Car image -->
-    <ImageView
-        android:id="@+id/carImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/car_side_view_description"
-        android:src="@drawable/miata_side_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carLogoImageView"
-        tools:ignore="VisualLintBounds" />
 
     <!-- Map view -->
+
+    <ImageView
+        android:id="@+id/carLogoImageView"
+        android:layout_width="52dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/car_image_description"
+        android:src="@drawable/mazda_logo"
+        app:layout_constraintBottom_toTopOf="@+id/carImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/carModelTextView"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="VisualLintBounds" />
+
+    <ImageView
+        android:id="@+id/carImageView"
+        android:layout_width="411dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/car_side_view_description"
+        android:src="@drawable/miata_side_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carModelTextView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="VisualLintBounds" />
+
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="0dp"
