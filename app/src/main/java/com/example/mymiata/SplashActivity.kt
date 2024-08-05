@@ -23,6 +23,12 @@ class SplashActivity : AppCompatActivity() {
         }
         videoView.start()
     }
+    private fun isUserAuthenticated(): Boolean {
+        // Implement your logic to check if the user is authenticated
+        // For example, check if a user token is saved in SharedPreferences
+        val sharedPref = getSharedPreferences("MyApp", MODE_PRIVATE)
+        return sharedPref.contains("userToken")
+    }
 }
 
 
