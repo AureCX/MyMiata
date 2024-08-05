@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:visibility="visible">
+    tools:context=".MainActivity">
 
     <!-- Welcome message -->
     <TextView
@@ -22,7 +21,6 @@
         tools:ignore="VisualLintOverlap" />
 
     <!-- Car model and logo -->
-
     <TextView
         android:id="@+id/carModelTextView"
         android:layout_width="wrap_content"
@@ -46,11 +44,9 @@
         android:src="@drawable/mazda_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carModelTextView" />
+        app:layout_constraintTop_toBottomOf="@id/carModelTextView"
+        tools:ignore="VisualLintBounds" />
 
-    <!-- Car image -->
-
-    <!-- Fuel gauge -->
     <ImageView
         android:id="@+id/carImageView"
         android:layout_width="wrap_content"
@@ -61,32 +57,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carLogoImageView" />
-
-    <com.github.anastr.speedviewlib.SpeedView
-        android:id="@+id/fuelGauge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carImageView" />
+        app:layout_constraintTop_toBottomOf="@id/carLogoImageView"
+        tools:ignore="VisualLintBounds" />
 
     <!-- Map view -->
-    <TextView
-        android:id="@+id/fuelLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/fuel_level"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fuelGauge" />
-
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="0dp"
@@ -95,5 +69,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fuelLabelTextView" />
+        app:layout_constraintTop_toBottomOf="@id/carImageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

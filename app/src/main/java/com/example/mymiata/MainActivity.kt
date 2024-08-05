@@ -2,8 +2,8 @@ package com.example.mymiata
 
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.github.anastr.speedviewlib.SpeedView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
@@ -12,34 +12,25 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
-
     private lateinit var mapView: MapView
-    private lateinit var googleMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Now you can access your views using findViewById
         val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
-        val fuelGauge = findViewById<SpeedView>(R.id.fuelGauge)
+        val carLogoImageView = findViewById<ImageView>(R.id.carLogoImageView)
+        val carImageView = findViewById<ImageView>(R.id.carImageView)
         mapView = findViewById(R.id.mapView)
 
-        // Set welcome message
         val username = "User" // Replace with dynamic username retrieval logic
-        val welcomeMessage = getString(R.string.welcome_message, username)
-        welcomeTextView.text = welcomeMessage
+        welcomeTextView.text = getString(R.string.welcome_username, username)
 
-        // Initialize fuel gauge
-        fuelGauge.speedTo(50F) // Example fuel level, replace with dynamic data
-
-        // Initialize map view
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
     }
 
-    override fun onMapReady(map: GoogleMap) {
-        googleMap = map
+    override fun onMapReady(googleMap: GoogleMap) {
         val carLocation = LatLng(-34.0, 151.0) // Replace with dynamic car location data
         googleMap.addMarker(MarkerOptions().position(carLocation).title("Car Location"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLocation, 15f))
