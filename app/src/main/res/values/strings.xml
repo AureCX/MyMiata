@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">MyMiata</string>
     <string name="my_miata">My Miata</string>
     <string name="car_image_description">Car Logo</string>
@@ -10,7 +10,6 @@
     <string name="password">Password</string>
     <string name="button">Button</string>
     <string name="plaque_vide">plaque_vide</string>
-    <string name="plaque_imma">GM-123-GV</string>
     <string name="enter_text_here">Enter text here</string>
     <string name="enter_your_username">Enter your username</string>
     <string name="welcome_user">Welcome User!</string>
