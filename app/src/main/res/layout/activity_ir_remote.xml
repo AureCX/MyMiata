@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/irRemoteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IR Remote Control"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/powerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Power"
+        android:layout_below="@id/irRemoteTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/volumeUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volume +"
+        android:layout_below="@id/powerButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/volumeDownButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volume -"
+        android:layout_below="@id/volumeUpButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/channelUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Channel +"
+        android:layout_below="@id/volumeDownButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/channelDownButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Channel -"
+        android:layout_below="@id/channelUpButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/backToMainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:text="X"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

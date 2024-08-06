@@ -1,6 +1,7 @@
 package com.example.mymiata
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -40,6 +41,12 @@ class MainActivity : AppCompatActivity() {
         val mapView = findViewById<MapView>(R.id.mapView)
         val button: Button = findViewById(R.id.button)
         val bubbleMenu: LinearLayout = findViewById(R.id.bubbleMenu)
+        val irRemoteButton: Button = findViewById(R.id.irRemoteButton)
+
+        irRemoteButton.setOnClickListener {
+            val intent = Intent(this, IRRemoteActivity::class.java)
+            startActivity(intent)
+        }
 
         button.setOnClickListener {
             if (bubbleMenu.visibility == View.GONE) {
