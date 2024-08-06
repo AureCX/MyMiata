@@ -5,7 +5,11 @@
     <string name="car_side_view_description">Car Side View</string>
     <string name="welcome_username">Welcome %1$s!</string>
     <string name="login">Login</string>
-    <string name="sign_up" tools:ignore="StringEscaping">Don't have an account? Sign Up here</string>
+    <string name="sign_up">Sign Up</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="button">Button</string>
+    <string name="plaque_vide">plaque_vide</string>
+    <string name="plaque_imma">GM-123-GV</string>
+    <string name="enter_text_here">Enter text here</string>
 </resources>

@@ -37,10 +37,6 @@
         app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
         tools:ignore="VisualLintOverlap" />
 
-    <!-- Car image -->
-
-    <!-- Map view -->
-
     <ImageView
         android:id="@+id/carLogoImageView"
         android:layout_width="52dp"
@@ -65,6 +61,7 @@
         android:src="@drawable/miata_side_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carModelTextView"
         app:layout_constraintVertical_bias="0.0"
@@ -79,4 +76,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/carImageView" />
+
+    <!-- Bubble Menu -->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="188dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/bubbleMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bubble_background"
+        android:visibility="gone"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        app:layout_constraintStart_toStartOf="@id/button"
+        app:layout_constraintEnd_toEndOf="@id/button">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
+        <!-- Image inside the bubble menu -->
+    <ImageView
+        android:id="@+id/bubbleImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/plaque_vide"
+        android:src="@drawable/plaque_francaise_vide" />
+
+    <!-- Text zone inside the bubble menu -->
+    <TextView
+        android:id="@+id/bubbleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:text="@string/plaque_imma"
+        android:textColor="@android:color/black"
+        android:background="#00000000"
+        android:textSize="17sp"
+        android:gravity="center"/>
+
+        </FrameLayout>
+
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
