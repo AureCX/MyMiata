@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,37 +10,32 @@
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/username"
-        android:inputType="text"
-        android:importantForAutofill="yes"
-        android:autofillHints="username"
-        android:padding="12dp"
-        android:minHeight="48dp" />
+        android:autofillHints="Enter your username"
+        android:hint="@string/enter_your_username"
+        android:inputType="textNoSuggestions"
+        android:minHeight="48dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/licensePlateEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:importantForAutofill="yes"
-        android:autofillHints="password"
-        android:padding="12dp"
-        android:minHeight="48dp" />
+        android:layout_marginTop="16dp"
+        android:autofillHints="@string/enter_your_license_plate"
+        android:hint="@string/enter_your_license_plate"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black" />
+
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:padding="12dp"
-        android:minHeight="48dp" />
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:padding="12dp"
-        android:minHeight="48dp" />
+        tools:ignore="VisualLintButtonSize" />
 
 </LinearLayout>

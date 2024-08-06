@@ -1,6 +1,6 @@
-// SplashActivity.kt
 package com.example.mymiata
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -14,22 +14,26 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val videoView: VideoView = findViewById(R.id.splashVideoView)
-        val videoUri = Uri.parse("android.resource://" + packageName + "/" + R.raw.splash_video)
+        val videoUri = Uri.parse("android.resource://${packageName}/${R.raw.splash_video}")
 
         videoView.setVideoURI(videoUri)
         videoView.setOnCompletionListener {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
+            navigateToNextScreen()
         }
         videoView.start()
     }
-    private fun isUserAuthenticated(): Boolean {
-        // Implement your logic to check if the user is authenticated
-        // For example, check if a user token is saved in SharedPreferences
-        val sharedPref = getSharedPreferences("MyApp", MODE_PRIVATE)
-        return sharedPref.contains("userToken")
+
+    private fun navigateToNextScreen() {
+        val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", null)
+
+        if (username != null) {
+            // If username is saved, go directly to MainActivity
+            startActivity(Intent(this, MainActivity::class.java))
+        } else {
+            // Otherwise, go to LoginActivity
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+        finish()
     }
 }
-
-
-

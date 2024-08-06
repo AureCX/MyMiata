@@ -1,5 +1,6 @@
 package com.example.mymiata
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -15,7 +16,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_MyMiata) // Set the main theme after splash screen
@@ -24,6 +24,17 @@ class MainActivity : AppCompatActivity() {
 
         // Now you can access your views using findViewById
         val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
+        val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", "User")
+        val licensePlate = sharedPref.getString("licensePlate", "")
+
+        if (username != null) {
+            welcomeTextView.text = "Welcome $username!"
+        } else {
+            welcomeTextView.text = "Welcome User!"
+        }
+        val licensePlateTextView: TextView = findViewById(R.id.licensePlateTextView)
+        licensePlateTextView.text = "$licensePlate"
         val carImageView = findViewById<ImageView>(R.id.carImageView)
         val carLogoImageView = findViewById<ImageView>(R.id.carLogoImageView)
         val mapView = findViewById<MapView>(R.id.mapView)
@@ -38,9 +49,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // Set welcome message
-        val username = "User" // Replace with dynamic username retrieval logic
-        welcomeTextView.text = getString(R.string.welcome_username, username)
-
         // Initialize map view
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync { googleMap ->
@@ -52,13 +60,13 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-private fun showInputDialog(bubbleText: TextView) {
+private fun showInputDialog(activity: AppCompatActivity, bubbleText: TextView) {
     // Inflate the dialog with a custom layout
-    val inflater: LayoutInflater = layoutInflater
+    val inflater: LayoutInflater = activity.layoutInflater
     val dialogView: View = inflater.inflate(R.layout.dialog_input, null)
 
     // Create an AlertDialog
-    val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+    val builder: AlertDialog.Builder = AlertDialog.Builder(activity)
     builder.setTitle("Enter Text")
     builder.setView(dialogView)
 
@@ -77,4 +85,3 @@ private fun showInputDialog(bubbleText: TextView) {
     // Show the dialog
     builder.show()
 }
-

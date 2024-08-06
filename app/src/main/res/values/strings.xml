@@ -12,4 +12,9 @@
     <string name="plaque_vide">plaque_vide</string>
     <string name="plaque_imma">GM-123-GV</string>
     <string name="enter_text_here">Enter text here</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="welcome_user">Welcome User!</string>
+    <string name="welcome">Welcome %1$s!</string>
+    <string name="license_plate">License Plate:</string>
+    <string name="enter_your_license_plate">Enter your license plate</string>
 </resources>

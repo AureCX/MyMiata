@@ -1,9 +1,10 @@
 package com.example.mymiata
 
+import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -12,19 +13,28 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val loginButton = findViewById<Button>(R.id.loginButton)
-        val signUpButton = findViewById<Button>(R.id.signUpButton)
+        val usernameEditText: EditText = findViewById(R.id.usernameEditText)
+        val licensePlateEditText: EditText = findViewById(R.id.licensePlateEditText)
+        val loginButton: Button = findViewById(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val loginUrl = "https://yourwebsite.com/login"
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(loginUrl))
-            startActivity(intent)
-        }
+            val username = usernameEditText.text.toString()
+            val licensePlate = licensePlateEditText.text.toString()
+            if (username.isNotEmpty() && licensePlate.isNotEmpty()) {
+                // Save username to SharedPreferences
+                val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
+                with(sharedPref.edit()) {
+                    putString("username", username)
+                    putString("licensePlate", licensePlate)
+                    apply()
+                }
 
-        signUpButton.setOnClickListener {
-            val signUpUrl = "https://yourwebsite.com/signup"
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(signUpUrl))
-            startActivity(intent)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                // Handle empty username case, e.g., show a Toast message
+            }
         }
     }
 }
