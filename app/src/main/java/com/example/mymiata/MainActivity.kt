@@ -16,6 +16,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
+import android.widget.ImageButton
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,23 +27,21 @@ class MainActivity : AppCompatActivity() {
 
         // Now you can access your views using findViewById
         val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
-        val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
-        val username = sharedPref.getString("username", "User")
-        val licensePlate = sharedPref.getString("licensePlate", "")
-
-        if (username != null) {
-            welcomeTextView.text = "Welcome $username!"
-        } else {
-            welcomeTextView.text = "Welcome User!"
-        }
         val licensePlateTextView: TextView = findViewById(R.id.licensePlateTextView)
-        licensePlateTextView.text = "$licensePlate"
         val carImageView = findViewById<ImageView>(R.id.carImageView)
         val carLogoImageView = findViewById<ImageView>(R.id.carLogoImageView)
         val mapView = findViewById<MapView>(R.id.mapView)
         val button: Button = findViewById(R.id.button)
         val bubbleMenu: LinearLayout = findViewById(R.id.bubbleMenu)
         val irRemoteButton: Button = findViewById(R.id.irRemoteButton)
+        val logoutButton: Button = findViewById(R.id.logoutButton)
+
+        val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", "User")
+        val licensePlate = sharedPref.getString("licensePlate", "")
+
+        welcomeTextView.text = "Welcome ${username ?: "User"}!"
+        licensePlateTextView.text = licensePlate
 
         irRemoteButton.setOnClickListener {
             val intent = Intent(this, IRRemoteActivity::class.java)
@@ -55,7 +55,11 @@ class MainActivity : AppCompatActivity() {
                 bubbleMenu.visibility = View.GONE
             }
         }
-        // Set welcome message
+
+        logoutButton.setOnClickListener {
+            logout()
+        }
+
         // Initialize map view
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync { googleMap ->
@@ -63,10 +67,24 @@ class MainActivity : AppCompatActivity() {
             googleMap.addMarker(MarkerOptions().position(carLocation).title("Car Location"))
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLocation, 15f))
         }
-
     }
 
+    private fun logout() {
+        val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
+        with(sharedPref.edit()) {
+            remove("username")
+            remove("licensePlate")
+            apply()
+
+        }
+        Toast.makeText(this, "Successfully logged out", Toast.LENGTH_SHORT).show()
+
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
+
 private fun showInputDialog(activity: AppCompatActivity, bubbleText: TextView) {
     // Inflate the dialog with a custom layout
     val inflater: LayoutInflater = activity.layoutInflater

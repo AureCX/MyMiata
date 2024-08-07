@@ -15,7 +15,7 @@
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,VisualLintOverlap" />
 
     <Button
         android:id="@+id/powerButton"
@@ -25,7 +25,7 @@
         android:layout_below="@id/irRemoteTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,VisualLintOverlap" />
 
     <Button
         android:id="@+id/volumeUpButton"
@@ -69,15 +69,24 @@
 
     <Button
         android:id="@+id/backToMainButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_width="74dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="321dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="810dp"
         android:background="@android:color/transparent"
         android:text="X"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
 
 </RelativeLayout>
