@@ -3,90 +3,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".IRRemoteActivity">
 
-    <TextView
-        android:id="@+id/irRemoteTitle"
+    <ImageButton
+        android:id="@+id/button_power"
+        android:layout_width="129dp"
+        android:layout_height="125dp"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_power"
+        android:src="@drawable/button_power" />
+
+    <ImageButton
+        android:id="@+id/button_speed_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IR Remote Control"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"
+        android:src="@drawable/button_speed_plus"
+        android:layout_below="@id/button_power"
         android:layout_marginTop="16dp"
-        tools:ignore="HardcodedText,VisualLintOverlap" />
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_speed_plus" />
 
-    <Button
-        android:id="@+id/powerButton"
+    <ImageButton
+        android:id="@+id/button_mode_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Power"
-        android:layout_below="@id/irRemoteTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        tools:ignore="HardcodedText,VisualLintOverlap" />
+        android:src="@drawable/button_mode_plus"
+        android:layout_toEndOf="@id/button_mode_plus"
+        android:layout_below="@id/button_power"
+        android:layout_marginStart="16dp"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_mode_plus" />
 
-    <Button
-        android:id="@+id/volumeUpButton"
+    <ImageButton
+        android:id="@+id/button_speed_minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Volume +"
-        android:layout_below="@id/powerButton"
-        android:layout_centerHorizontal="true"
+        android:src="@drawable/button_speed_minus"
+        android:layout_toEndOf="@id/button_mode_plus"
+        android:layout_below="@id/button_power"
+        android:layout_marginStart="16dp"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_speed_minus" />
+
+    <ImageButton
+        android:id="@+id/button_color_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_speed_plus"
+        android:layout_marginTop="86dp"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_color_plus"
+        android:src="@drawable/button_color_plus" />
+
+    <ImageButton
+        android:id="@+id/button_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/button_demo"
+        android:layout_toEndOf="@id/button_color_plus"
+        android:layout_below="@id/button_mode_plus"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        tools:ignore="HardcodedText" />
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_demo" />
 
-    <Button
-        android:id="@+id/volumeDownButton"
+    <ImageButton
+        android:id="@+id/button_mode_minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Volume -"
-        android:layout_below="@id/volumeUpButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        tools:ignore="HardcodedText" />
+        android:layout_below="@id/button_speed_minus"
+        android:layout_marginStart="-128dp"
+        android:layout_marginTop="380dp"
+        android:layout_toEndOf="@id/button_demo"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_mode_minus"
+        android:src="@drawable/button_mode_minus" />
 
-    <Button
-        android:id="@+id/channelUpButton"
+    <ImageButton
+        android:id="@+id/button_color_minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Channel +"
-        android:layout_below="@id/volumeDownButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        tools:ignore="HardcodedText" />
+        android:layout_below="@id/button_color_plus"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_color_minus"
+        android:src="@drawable/button_color_minus"
+        tools:ignore="ImageContrastCheck" />
 
-    <Button
-        android:id="@+id/channelDownButton"
+    <!-- Add color buttons here in a similar fashion -->
+
+    <!-- Add the back button -->
+
+    <ImageButton
+        android:id="@+id/button_bright_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Channel -"
-        android:layout_below="@id/channelUpButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        tools:ignore="HardcodedText" />
+        android:layout_below="@id/button_demo"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@id/button_color_minus"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_bright_plus"
+        android:src="@drawable/button_bright_plus" />
 
-    <Button
-        android:id="@+id/backToMainButton"
-        android:layout_width="74dp"
-        android:layout_height="65dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+    <ImageButton
+        android:id="@+id/button_bright_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_mode_minus"
+        android:layout_marginStart="-267dp"
+        android:layout_marginTop="170dp"
+        android:layout_toEndOf="@id/button_bright_plus"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_bright_minus"
+        android:src="@drawable/button_bright_minus" />
+
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/button_back"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="321dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="810dp"
-        android:background="@android:color/transparent"
-        android:text="X"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,VisualLintButtonSize" />
+        android:layout_centerHorizontal="true"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_back" />
 
 </RelativeLayout>

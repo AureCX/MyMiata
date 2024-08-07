@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.hardware.ConsumerIrManager
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -18,30 +18,80 @@ class IRRemoteActivity : AppCompatActivity() {
 
         irManager = getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager
 
-        val powerButton: Button = findViewById(R.id.powerButton)
-        val volumeUpButton: Button = findViewById(R.id.volumeUpButton)
-        val volumeDownButton: Button = findViewById(R.id.volumeDownButton)
-        val channelUpButton: Button = findViewById(R.id.channelUpButton)
-        val channelDownButton: Button = findViewById(R.id.channelDownButton)
+        val powerButton: ImageButton = findViewById(R.id.button_power)
+        val speedPlusButton: ImageButton = findViewById(R.id.button_speed_plus)
+        val modePlusButton: ImageButton = findViewById(R.id.button_mode_plus)
+        val speedMinusButton: ImageButton = findViewById(R.id.button_speed_minus)
+        val colorPlusButton: ImageButton = findViewById(R.id.button_color_plus)
+        val demoButton: ImageButton = findViewById(R.id.button_demo)
+        val modeMinusButton: ImageButton = findViewById(R.id.button_mode_minus)
+        val colorMinusButton: ImageButton = findViewById(R.id.button_color_minus)
+        val brightPlusButton: ImageButton = findViewById(R.id.button_bright_plus)
+        val brightMinusButton: ImageButton = findViewById(R.id.button_bright_minus)
+        val backButton: ImageButton = findViewById(R.id.button_back)
 
         powerButton.setOnClickListener {
             sendIrSignal(0x10EFD827) // Replace with your device's IR code
         }
 
-        volumeUpButton.setOnClickListener {
-            sendIrSignal(0x10EF58A7) // Replace with your device's IR code
+        powerButton.setOnClickListener {
+            // Handle power button click
+            showToast("Power button clicked")
+            // Implement your action here
         }
 
-        volumeDownButton.setOnClickListener {
-            sendIrSignal(0x10EFA857) // Replace with your device's IR code
+        speedPlusButton.setOnClickListener {
+            // Handle speed plus button click
+            showToast("Speed Plus button clicked")
+            // Implement your action here
         }
 
-        channelUpButton.setOnClickListener {
-            sendIrSignal(0x10EF807F) // Replace with your device's IR code
+        modePlusButton.setOnClickListener {
+            // Handle mode plus button click
+            showToast("Mode Plus button clicked")
+            // Implement your action here
         }
 
-        channelDownButton.setOnClickListener {
-            sendIrSignal(0x10EF40BF) // Replace with your device's IR code
+        speedMinusButton.setOnClickListener {
+            // Handle speed minus button click
+            showToast("Speed Minus button clicked")
+            // Implement your action here
+        }
+
+        colorPlusButton.setOnClickListener {
+            // Handle color plus button click
+            showToast("Color Plus button clicked")
+            // Implement your action here
+        }
+
+        demoButton.setOnClickListener {
+            // Handle demo button click
+            showToast("Demo button clicked")
+            // Implement your action here
+        }
+
+        modeMinusButton.setOnClickListener {
+            // Handle mode minus button click
+            showToast("Mode Minus button clicked")
+            // Implement your action here
+        }
+
+        colorMinusButton.setOnClickListener {
+            // Handle color minus button click
+            showToast("Color Minus button clicked")
+            // Implement your action here
+        }
+
+        brightPlusButton.setOnClickListener {
+            // Handle bright plus button click
+            showToast("Bright Plus button clicked")
+            // Implement your action here
+        }
+
+        brightMinusButton.setOnClickListener {
+            // Handle bright minus button click
+            showToast("Bright Minus button clicked")
+            // Implement your action here
         }
     }
 
@@ -59,12 +109,15 @@ class IRRemoteActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "No IR emitter found on this device", Toast.LENGTH_SHORT).show()
         }
-        val backToMainButton: Button = findViewById(R.id.backToMainButton)
-        backToMainButton.setOnClickListener {
+        val backButton: ImageButton = findViewById(R.id.button_back)
+        backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish() // Optional: close the current activity
+            finish()
         }
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 }
