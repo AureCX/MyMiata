@@ -1,5 +1,6 @@
 package com.example.mymiata
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AlertDialog
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_MyMiata) // Set the main theme after splash screen
         super.onCreate(savedInstanceState)
