@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.hardware.ConsumerIrManager
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,16 +20,16 @@ class IRRemoteActivity : AppCompatActivity() {
         irManager = getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager
 
         val powerButton: ImageButton = findViewById(R.id.button_power)
-        val speedPlusButton: ImageButton = findViewById(R.id.button_speed_plus)
-        val modePlusButton: ImageButton = findViewById(R.id.button_mode_plus)
-        val speedMinusButton: ImageButton = findViewById(R.id.button_speed_minus)
-        val colorPlusButton: ImageButton = findViewById(R.id.button_color_plus)
-        val demoButton: ImageButton = findViewById(R.id.button_demo)
-        val modeMinusButton: ImageButton = findViewById(R.id.button_mode_minus)
-        val colorMinusButton: ImageButton = findViewById(R.id.button_color_minus)
-        val brightPlusButton: ImageButton = findViewById(R.id.button_bright_plus)
-        val brightMinusButton: ImageButton = findViewById(R.id.button_bright_minus)
-        val backButton: ImageButton = findViewById(R.id.button_back)
+        val speedPlusButton: Button = findViewById(R.id.button_speed_plus)
+        val modePlusButton: Button = findViewById(R.id.button_mode_plus)
+        val speedMinusButton: Button = findViewById(R.id.button_speed_minus)
+        val colorPlusButton: Button = findViewById(R.id.button_color_plus)
+        val demoButton: Button = findViewById(R.id.button_demo)
+        val modeMinusButton: Button = findViewById(R.id.button_mode_minus)
+        val colorMinusButton: Button = findViewById(R.id.button_color_minus)
+        val brightPlusButton: Button = findViewById(R.id.button_bright_plus)
+        val brightMinusButton: Button = findViewById(R.id.button_bright_minus)
+        val backButton: Button = findViewById(R.id.button_back)
 
         powerButton.setOnClickListener {
             sendIrSignal(0x10EFD827) // Replace with your device's IR code
@@ -109,7 +110,7 @@ class IRRemoteActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "No IR emitter found on this device", Toast.LENGTH_SHORT).show()
         }
-        val backButton: ImageButton = findViewById(R.id.button_back)
+        val backButton: Button = findViewById(R.id.button_back)
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

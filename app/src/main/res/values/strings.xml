@@ -18,15 +18,16 @@
     <string name="enter_your_license_plate">Enter your license plate</string>
     <string name="logout">Log out</string>
     <string name="button_power">Power</string>
-    <string name="button_speed_plus">Speed Plus</string>
-    <string name="button_mode_plus">Mode Plus</string>
-    <string name="button_speed_minus">Speed Minus</string>
-    <string name="button_color_plus">Color Plus</string>
+    <string name="button_speed_plus">Speed +</string>
+    <string name="button_mode_plus">Mode +</string>
+    <string name="button_speed_minus">Speed +</string>
+    <string name="button_color_plus">Color +</string>
     <string name="button_demo">Demo</string>
-    <string name="button_mode_minus">Mode Minus</string>
-    <string name="button_color_minus">Color Minus</string>
-    <string name="button_bright_plus">Bright Plus</string>
-    <string name="button_bright_minus">Bright Minus</string>
+    <string name="button_mode_minus">Mode -</string>
+    <string name="button_color_minus">Color -</string>
+    <string name="button_bright_plus">Bright +</string>
+    <string name="button_bright_minus">Bright -</string>
     <string name="button_back">Back</string>
+    <string name="x">X</string>
 
 </resources>
