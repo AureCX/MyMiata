@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:visibility="visible"
     tools:context=".IRRemoteActivity">
 
     <ImageButton
@@ -12,61 +13,71 @@
         android:layout_height="183dp"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_power"
-        android:src="@drawable/button_power" />
+        android:src="@drawable/button_power"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button_speed_plus"
-        android:layout_width="wrap_content"
+        android:layout_width="101dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="363dp"
+        android:layout_marginTop="250dp"
         android:layout_marginEnd="10dp"
-        android:layout_toEndOf="@+id/button_demo"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_speed_plus"
-        android:text="@string/button_speed_plus" />
+        android:text="@string/button_speed_plus"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button_mode_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_mode_plus"
-        android:layout_toEndOf="@id/button_mode_plus"
         android:layout_below="@id/button_power"
-        android:layout_marginStart="16dp"
-        android:background="?android:selectableItemBackground"
-        android:contentDescription="@string/button_mode_plus" />
+        android:layout_alignParentStart="true"
 
-    <Button
-        android:id="@+id/button_speed_minus"
-        android:layout_width="64dp"
-        android:layout_height="60dp"
-        android:layout_below="@id/button_power"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_toEndOf="@id/button_mode_plus"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="125dp"
         android:background="?android:selectableItemBackground"
-        android:contentDescription="@string/button_speed_minus"
-        android:text="@string/button_speed_minus" />
+        android:contentDescription="@string/button_mode_plus"
+        android:text="@string/button_mode_plus"
+        android:visibility="visible" />
 
     <!-- Add color buttons here in a similar fashion -->
 
     <!-- Add the back button -->
 
     <Button
+        android:id="@+id/button_speed_minus"
+        android:layout_width="64dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="30dp"
+        android:layout_toStartOf="@+id/button_demo"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@string/button_speed_minus"
+        android:text="@string/button_speed_minus"
+        android:visibility="visible" />
+
+    <Button
         android:id="@+id/button_color_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="313dp"
-        android:layout_marginEnd="121dp"
-        android:layout_toStartOf="@+id/button_demo"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="-130dp"
+        android:layout_toStartOf="@+id/button_mode_minus"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_color_plus"
         android:text="@string/button_color_plus"
+        android:visibility="visible"
         tools:ignore="RelativeOverlap" />
 
     <Button
@@ -74,10 +85,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_mode_plus"
-        android:layout_marginTop="371dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="125dp"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_demo"
-        android:text="@string/button_demo" />
+        android:text="@string/button_demo"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button_mode_minus"
@@ -85,11 +99,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_demo"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="107dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="10dp"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_mode_minus"
-        android:text="@string/button_mode_minus" />
+        android:text="@string/button_mode_minus"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button_color_minus"
@@ -97,24 +112,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button_color_plus"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="408dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_color_minus"
         android:text="@string/button_color_minus"
-        tools:ignore="ImageContrastCheck" />
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button_bright_plus"
-        android:layout_width="123dp"
-        android:layout_height="46dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/button_speed_plus"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="62dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
         android:layout_toEndOf="@+id/button_mode_minus"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_bright_plus"
-        android:text="@string/button_bright_plus" />
+        android:text="@string/button_bright_plus"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button_bright_minus"
@@ -122,11 +140,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_bright_plus"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="9dp"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_bright_minus"
-        android:text="@string/button_bright_minus" />
+        android:text="@string/button_bright_minus"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button_back"
@@ -134,13 +153,14 @@
         android:layout_height="66dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_back"
         android:text="@string/x"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
+        android:visibility="visible"
         tools:ignore="RelativeOverlap,TouchTargetSizeCheck" />
 
 </RelativeLayout>
