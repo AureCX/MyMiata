@@ -20,7 +20,7 @@
     <string name="button_power">Power</string>
     <string name="button_speed_plus">Speed +</string>
     <string name="button_mode_plus">Mode +</string>
-    <string name="button_speed_minus">Speed +</string>
+    <string name="button_speed_minus">Speed -</string>
     <string name="button_color_plus">Color +</string>
     <string name="button_demo">Demo</string>
     <string name="button_mode_minus">Mode -</string>

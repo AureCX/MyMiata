@@ -7,6 +7,7 @@
     android:visibility="visible"
     tools:context=".IRRemoteActivity">
 
+
     <ImageButton
         android:id="@+id/button_power"
         android:layout_width="175dp"
@@ -24,10 +25,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="250dp"
         android:layout_marginEnd="10dp"
-        android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_speed_plus"
         android:text="@string/button_speed_plus"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:backgroundTint="@android:color/darker_gray"/>
 
     <Button
         android:id="@+id/button_mode_plus"
@@ -35,12 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button_power"
         android:layout_alignParentStart="true"
-
         android:layout_alignParentEnd="true"
         android:layout_marginStart="145dp"
         android:layout_marginTop="3dp"
         android:layout_marginEnd="125dp"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_mode_plus"
         android:text="@string/button_mode_plus"
         android:visibility="visible" />
@@ -52,14 +52,14 @@
     <Button
         android:id="@+id/button_speed_minus"
         android:layout_width="64dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="250dp"
         android:layout_marginEnd="30dp"
         android:layout_toStartOf="@+id/button_demo"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_speed_minus"
         android:text="@string/button_speed_minus"
         android:visibility="visible" />
@@ -71,10 +71,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="310dp"
         android:layout_marginEnd="-130dp"
         android:layout_toStartOf="@+id/button_mode_minus"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_color_plus"
         android:text="@string/button_color_plus"
         android:visibility="visible"
@@ -88,7 +88,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="125dp"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_demo"
         android:text="@string/button_demo"
         android:visibility="visible" />
@@ -101,7 +101,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="150dp"
         android:layout_marginTop="10dp"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_mode_minus"
         android:text="@string/button_mode_minus"
         android:visibility="visible" />
@@ -114,7 +114,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_color_minus"
         android:text="@string/button_color_minus"
         android:visibility="visible" />
@@ -125,11 +125,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_speed_plus"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="13dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="3dp"
         android:layout_toEndOf="@+id/button_mode_minus"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_bright_plus"
         android:text="@string/button_bright_plus"
         android:visibility="visible" />
@@ -142,7 +142,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="9dp"
-        android:background="?android:selectableItemBackground"
+        android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_bright_minus"
         android:text="@string/button_bright_minus"
         android:visibility="visible" />
@@ -162,5 +162,84 @@
         android:textSize="24sp"
         android:visibility="visible"
         tools:ignore="RelativeOverlap,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/white_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_mode_minus"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="28dp"
+        android:layout_toStartOf="@+id/button_bright_minus"
+        android:layout_toEndOf="@+id/button_color_minus"
+        android:backgroundTint="@android:color/white"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/red_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_color_minus"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:backgroundTint="#ff0000"/>
+
+    <Button
+        android:id="@+id/green_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/white_button"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/red_button"
+        android:backgroundTint="@android:color/holo_green_dark"/>
+
+    <Button
+        android:id="@+id/dark_blue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_bright_minus"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@+id/green_button"
+        android:backgroundTint="#00008B"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/yellow_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/red_button"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:backgroundTint="#FFFF00"/>
+
+    <Button
+        android:id="@+id/ocean_blue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/green_button"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/yellow_button"
+        android:backgroundTint="#009dc4"/>
+
+    <Button
+        android:id="@+id/purple_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dark_blue_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@+id/ocean_blue_button"
+        android:backgroundTint="#800080"
+        tools:ignore="VisualLintButtonSize" />
 
 </RelativeLayout>
