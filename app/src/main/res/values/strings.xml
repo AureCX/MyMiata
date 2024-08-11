@@ -29,5 +29,6 @@
     <string name="button_bright_minus">Bright -</string>
     <string name="button_back">Back</string>
     <string name="x">X</string>
+    <string name="infrared_remote">InfraRed remote</string>
 
 </resources>
