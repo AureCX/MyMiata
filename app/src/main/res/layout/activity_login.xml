@@ -58,6 +58,18 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black" />
 
+    <EditText
+        android:id="@+id/phoneNumberEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:autofillHints="@string/enter_your_emergency_service_number"
+        android:hint="@string/enter_your_emergency_service_number"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black"/>
+
 
     <Button
         android:id="@+id/loginButton"

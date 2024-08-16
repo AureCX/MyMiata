@@ -3,6 +3,7 @@ package com.example.mymiata
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
         val username = sharedPref.getString("username", "User")
         val licensePlate = sharedPref.getString("licensePlate", "")
+        val phoneNumber = sharedPref.getString("phone_number", "") // Retrieve the stored phone number
+
 
         welcomeTextView.text = "Welcome ${username ?: "User"}!"
         licensePlateTextView.text = licensePlate
@@ -60,7 +63,10 @@ class MainActivity : AppCompatActivity() {
         logoutButton.setOnClickListener {
             logout()
         }
-
+        val dialButton: Button = findViewById(R.id.button_dial) // Ensure this ID matches your XML
+        dialButton.setOnClickListener {
+            openPhoneDialer(phoneNumber)
+        }
         // Initialize map view
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync { googleMap ->
@@ -83,6 +89,15 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+    private fun openPhoneDialer(phoneNumber: String?) {
+        if (!phoneNumber.isNullOrEmpty()) {
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+            dialIntent.data = Uri.parse("tel:$phoneNumber")
+            startActivity(dialIntent)
+        } else {
+            Toast.makeText(this, "Phone number not available", Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
@@ -111,3 +126,4 @@ private fun showInputDialog(activity: AppCompatActivity, bubbleText: TextView) {
     // Show the dialog
     builder.show()
 }
+

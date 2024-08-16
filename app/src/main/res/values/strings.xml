@@ -30,5 +30,7 @@
     <string name="button_back">Back</string>
     <string name="x">X</string>
     <string name="infrared_remote">InfraRed remote</string>
+    <string name="emergency">Emergency</string>
+    <string name="enter_your_emergency_service_number">Enter your emergency service number</string>
 
 </resources>
