@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val carImageView = findViewById<ImageView>(R.id.carImageView)
         val carLogoImageView = findViewById<ImageView>(R.id.carLogoImageView)
         val mapView = findViewById<MapView>(R.id.mapView)
-        val button: Button = findViewById(R.id.button)
+        val button: Button = findViewById(R.id.license_plate_button)
         val bubbleMenu: LinearLayout = findViewById(R.id.bubbleMenu)
         val irRemoteButton: Button = findViewById(R.id.irRemoteButton)
         val logoutButton: Button = findViewById(R.id.logoutButton)
