@@ -21,7 +21,7 @@
 
     <!-- Car model and logo -->
 
-    <TextView
+    <Button
         android:id="@+id/carModelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,8 @@
         android:layout_marginEnd="312dp"
         android:text="@string/my_miata"
         android:textColor="#FF0000"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,15 +39,15 @@
 
     <ImageView
         android:id="@+id/carLogoImageView"
-        android:layout_width="52dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="65dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
         android:contentDescription="@string/car_image_description"
         android:src="@drawable/mazda_logo"
         app:layout_constraintBottom_toTopOf="@+id/carImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/carModelTextView"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="VisualLintBounds" />
@@ -68,6 +69,7 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
+        android:contentDescription="@string/carte_de_localisation"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -82,11 +84,11 @@
         android:id="@+id/license_plate_button"
         android:layout_width="108dp"
         android:layout_height="55dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="200dp"
         android:background="@android:color/transparent"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
         tools:ignore="SpeakableTextPresentCheck"
@@ -141,6 +143,39 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/bubbleMenu2"
+        android:layout_width="119dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/grey_bubble"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carModelTextView"
+        tools:ignore="TextSizeCheck"
+        tools:visibility="visible">
+
+            <!-- Text zone inside the bubble menu -->
+            <TextView
+                android:id="@+id/PopUpTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="1dp"
+                android:background="#00000000"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/popuptext"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                tools:ignore="VisualLintBounds" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/irRemoteButton"
         android:layout_width="47dp"
@@ -164,10 +199,10 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/carImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/welcomeTextView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <Button
         android:id="@+id/button_dial"

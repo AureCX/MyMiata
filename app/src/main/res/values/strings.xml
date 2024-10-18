@@ -32,5 +32,7 @@
     <string name="infrared_remote">InfraRed remote</string>
     <string name="emergency">Emergency</string>
     <string name="enter_your_emergency_service_number">Enter your emergency service number</string>
+    <string name="carte_de_localisation">Carte de localisation</string>
+    <string name="popuptext">Map</string>
 
 </resources>

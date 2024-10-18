@@ -30,11 +30,13 @@ class MainActivity : AppCompatActivity() {
         // Now you can access your views using findViewById
         val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
         val licensePlateTextView: TextView = findViewById(R.id.licensePlateTextView)
+        val carModelTextView: Button = findViewById(R.id.carModelTextView)
         val carImageView = findViewById<ImageView>(R.id.carImageView)
         val carLogoImageView = findViewById<ImageView>(R.id.carLogoImageView)
         val mapView = findViewById<MapView>(R.id.mapView)
         val button: Button = findViewById(R.id.license_plate_button)
         val bubbleMenu: LinearLayout = findViewById(R.id.bubbleMenu)
+        val bubbleMenu2: LinearLayout = findViewById(R.id.bubbleMenu2)
         val irRemoteButton: Button = findViewById(R.id.irRemoteButton)
         val logoutButton: Button = findViewById(R.id.logoutButton)
 
@@ -50,6 +52,14 @@ class MainActivity : AppCompatActivity() {
         irRemoteButton.setOnClickListener {
             val intent = Intent(this, IRRemoteActivity::class.java)
             startActivity(intent)
+        }
+
+        carModelTextView.setOnClickListener {
+            if (bubbleMenu2.visibility == View.GONE) {
+                bubbleMenu2.visibility = View.VISIBLE
+            } else {
+                bubbleMenu2.visibility = View.GONE
+            }
         }
 
         button.setOnClickListener {
