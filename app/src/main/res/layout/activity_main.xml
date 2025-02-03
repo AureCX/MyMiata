@@ -39,17 +39,16 @@
 
     <ImageView
         android:id="@+id/carLogoImageView"
-        android:layout_width="65dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="39dp"
+        android:layout_height="48dp"
         android:contentDescription="@string/car_image_description"
         android:src="@drawable/mazda_logo"
         app:layout_constraintBottom_toTopOf="@+id/carImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.248"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/carModelTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953"
         tools:ignore="VisualLintBounds" />
 
     <ImageView
@@ -152,27 +151,27 @@
         android:orientation="vertical"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carModelTextView"
         tools:ignore="TextSizeCheck"
         tools:visibility="visible">
 
-            <!-- Text zone inside the bubble menu -->
-            <TextView
-                android:id="@+id/PopUpTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="1dp"
-                android:background="#00000000"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="@string/popuptext"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                tools:ignore="VisualLintBounds" />
+        <!-- Text zone inside the bubble menu -->
+        <TextView
+            android:id="@+id/PopUpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="1dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/popuptext"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            tools:ignore="VisualLintBounds" />
 
     </LinearLayout>
 
