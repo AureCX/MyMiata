@@ -19,6 +19,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import android.widget.Toast
+import androidx.compose.ui.platform.ComposeView
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
@@ -31,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
         val licensePlateTextView: TextView = findViewById(R.id.licensePlateTextView)
         val carModelTextView: Button = findViewById(R.id.carModelTextView)
-        val carImageView = findViewById<ImageView>(R.id.carImageView)
+        // val carImageView = findViewById<ImageView>(R.id.carImageView) OLD CAR VISUAL
+        val carModelComposeView = findViewById<ComposeView>(R.id.carModelComposeView)
         val carLogoImageView = findViewById<ImageView>(R.id.carLogoImageView)
         val mapView = findViewById<MapView>(R.id.mapView)
         val button: Button = findViewById(R.id.license_plate_button)
@@ -45,6 +47,9 @@ class MainActivity : AppCompatActivity() {
         val licensePlate = sharedPref.getString("licensePlate", "")
         val phoneNumber = sharedPref.getString("phone_number", "") // Retrieve the stored phone number
 
+        carModelComposeView.setContent {
+            CarModelView()
+        }
 
         welcomeTextView.text = "Welcome ${username ?: "User"}!"
         licensePlateTextView.text = licensePlate

@@ -43,7 +43,7 @@
         android:layout_height="48dp"
         android:contentDescription="@string/car_image_description"
         android:src="@drawable/mazda_logo"
-        app:layout_constraintBottom_toTopOf="@+id/carImageView"
+        app:layout_constraintBottom_toTopOf="@+id/carModelComposeView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/carModelTextView"
@@ -51,7 +51,7 @@
         app:layout_constraintVertical_bias="0.953"
         tools:ignore="VisualLintBounds" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/carImageView"
         android:layout_width="411dp"
         android:layout_height="259dp"
@@ -64,7 +64,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carModelTextView"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="VisualLintBounds" />
+        tools:ignore="VisualLintBounds" />-->
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/carModelComposeView"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carModelTextView" />
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
@@ -75,7 +84,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/carImageView" />
+        app:layout_constraintTop_toBottomOf="@id/carModelComposeView" />
 
     <!-- Bubble Menu -->
 
@@ -184,7 +193,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/carImageView"
+        app:layout_constraintTop_toTopOf="@+id/carModelComposeView"
         tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextSizeCheck,TouchTargetSizeCheck" />
 
     <Button
@@ -196,7 +205,7 @@
         android:text="@string/logout"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/carImageView"
+        app:layout_constraintBottom_toTopOf="@+id/carModelComposeView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/welcomeTextView"

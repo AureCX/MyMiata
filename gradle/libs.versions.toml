@@ -1,7 +1,7 @@
 [versions]
-agp = "8.5.1"
+agp = "9.3.1"
 appcompatVersion = "1.7.0"
-kotlin = "1.9.0"
+kotlin = "2.2.10"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -13,6 +13,9 @@ material = "1.12.0"
 playServicesMapsVersion = "19.0.0"
 constraintlayout = "2.1.4"
 activity = "1.9.1"
+sceneview = "4.0.0"
+fragment = "1.8.9"
+recyclerview = "1.4.0"
 
 [libraries]
 androidx-appcompat-v142 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -34,8 +37,12 @@ material = { module = "com.google.android.material:material", version.ref = "mat
 play-services-maps-v1802 = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMapsVersion" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+sceneview = { group = "io.github.sceneview", name = "sceneview", version.ref = "sceneview" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
