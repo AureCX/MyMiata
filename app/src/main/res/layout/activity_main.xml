@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/welcome_user"
+        tools:text="Welcome User!"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,23 +25,20 @@
         android:id="@+id/carModelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="312dp"
         android:text="@string/my_miata"
         android:textColor="#FF0000"
         android:textSize="20sp"
         android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeTextView"
-        tools:ignore="VisualLintOverlap" />
+        app:layout_constraintTop_toBottomOf="@id/welcomeTextView" />
 
     <ImageView
         android:id="@+id/carLogoImageView"
         android:layout_width="39dp"
         android:layout_height="48dp"
-        android:contentDescription="@string/car_image_description"
+        android:contentDescription="@string/car_logo_description"
         android:src="@drawable/mazda_logo"
         app:layout_constraintBottom_toTopOf="@+id/carImageView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +50,7 @@
 
     <ImageView
         android:id="@+id/carImageView"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="259dp"
         android:layout_marginTop="4dp"
         android:contentDescription="@string/car_side_view_description"
@@ -68,7 +65,7 @@
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
-        android:contentDescription="@string/carte_de_localisation"
+        android:contentDescription="@string/location_map"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -85,13 +82,11 @@
         android:layout_height="55dp"
         android:layout_marginTop="200dp"
         android:background="@android:color/transparent"
-        android:visibility="visible"
+        android:contentDescription="@string/show_license_plate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
 
     <LinearLayout
         android:id="@+id/bubbleMenu"
@@ -118,8 +113,7 @@
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="4dp"
-                android:contentDescription="@string/plaque_vide"
-                android:gravity="center"
+                android:contentDescription="@string/license_plate_background_description"
                 android:src="@drawable/plaque_francaise_vide" />
 
             <!-- Text zone inside the bubble menu -->
@@ -181,11 +175,11 @@
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/open_ir_remote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/carImageView"
-        tools:ignore="HardcodedText,SpeakableTextPresentCheck,TextSizeCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toTopOf="@+id/carImageView" />
 
     <Button
         android:id="@+id/logoutButton"
@@ -210,7 +204,7 @@
         android:layout_marginTop="80dp"
         android:backgroundTint="#FF0000"
         android:text="@string/emergency"
-        android:textColor="#FFFF"
+        android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

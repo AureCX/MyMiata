@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:visibility="visible"
     tools:context=".IRRemoteActivity">
 
 
@@ -14,8 +13,7 @@
         android:layout_height="183dp"
         android:background="?android:selectableItemBackground"
         android:contentDescription="@string/button_power"
-        android:src="@drawable/button_power"
-        android:visibility="visible" />
+        android:src="@drawable/button_power" />
 
     <Button
         android:id="@+id/button_speed_plus"
@@ -27,7 +25,6 @@
         android:layout_marginEnd="10dp"
         android:contentDescription="@string/button_speed_plus"
         android:text="@string/button_speed_plus"
-        android:visibility="visible"
         android:backgroundTint="@android:color/darker_gray"/>
 
     <Button
@@ -38,12 +35,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="145dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="125dp"
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_mode_plus"
         android:text="@string/button_mode_plus"
-        android:visibility="visible" />
+        tools:ignore="VisualLintButtonSize" />
 
     <!-- Add color buttons here in a similar fashion -->
 
@@ -62,22 +59,21 @@
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_speed_minus"
         android:text="@string/button_speed_minus"
-        android:visibility="visible" />
+        tools:ignore="VisualLintButtonSize" />
 
     <Button
         android:id="@+id/button_color_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/button_speed_minus"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="-130dp"
         android:layout_toStartOf="@+id/button_mode_minus"
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_color_plus"
         android:text="@string/button_color_plus"
-        android:visibility="visible"
         tools:ignore="RelativeOverlap" />
 
     <Button
@@ -90,8 +86,7 @@
         android:layout_marginEnd="125dp"
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_demo"
-        android:text="@string/button_demo"
-        android:visibility="visible" />
+        android:text="@string/button_demo" />
 
     <Button
         android:id="@+id/button_mode_minus"
@@ -103,8 +98,7 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_mode_minus"
-        android:text="@string/button_mode_minus"
-        android:visibility="visible" />
+        android:text="@string/button_mode_minus" />
 
     <Button
         android:id="@+id/button_color_minus"
@@ -116,8 +110,7 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_color_minus"
-        android:text="@string/button_color_minus"
-        android:visibility="visible" />
+        android:text="@string/button_color_minus" />
 
     <Button
         android:id="@+id/button_bright_plus"
@@ -132,7 +125,7 @@
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_bright_plus"
         android:text="@string/button_bright_plus"
-        android:visibility="visible" />
+        tools:ignore="VisualLintButtonSize" />
 
     <Button
         android:id="@+id/button_bright_minus"
@@ -144,8 +137,7 @@
         android:layout_marginEnd="9dp"
         android:backgroundTint="@android:color/darker_gray"
         android:contentDescription="@string/button_bright_minus"
-        android:text="@string/button_bright_minus"
-        android:visibility="visible" />
+        android:text="@string/button_bright_minus" />
 
     <Button
         android:id="@+id/button_back"
@@ -160,7 +152,6 @@
         android:text="@string/x"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
-        android:visibility="visible"
         tools:ignore="RelativeOverlap,TouchTargetSizeCheck" />
 
     <Button
@@ -169,35 +160,41 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_mode_minus"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_toStartOf="@+id/button_bright_minus"
         android:layout_toEndOf="@+id/button_color_minus"
         android:backgroundTint="@android:color/white"
-        tools:ignore="VisualLintButtonSize" />
+        android:contentDescription="@string/color_white"
+        android:outlineSpotShadowColor="@color/black"
+        tools:ignore="VisualLintButtonSize"
+        tools:targetApi="p" />
 
     <Button
         android:id="@+id/red_button"
+        android:contentDescription="@string/color_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_color_minus"
         android:layout_alignParentStart="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="17dp"
-        android:backgroundTint="#ff0000"/>
+        android:backgroundTint="#ff0000" />
 
     <Button
         android:id="@+id/green_button"
+        android:contentDescription="@string/color_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/white_button"
         android:layout_marginStart="30dp"
         android:layout_marginTop="17dp"
         android:layout_toEndOf="@+id/red_button"
-        android:backgroundTint="@android:color/holo_green_dark"/>
+        android:backgroundTint="@android:color/holo_green_dark" />
 
     <Button
         android:id="@+id/dark_blue_button"
+        android:contentDescription="@string/color_dark_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_bright_minus"
@@ -211,26 +208,29 @@
 
     <Button
         android:id="@+id/yellow_button"
+        android:contentDescription="@string/color_yellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/red_button"
         android:layout_alignParentStart="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="17dp"
-        android:backgroundTint="#FFFF00"/>
+        android:backgroundTint="#FFFF00" />
 
     <Button
         android:id="@+id/ocean_blue_button"
+        android:contentDescription="@string/color_ocean_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/green_button"
         android:layout_marginStart="30dp"
         android:layout_marginTop="17dp"
         android:layout_toEndOf="@+id/yellow_button"
-        android:backgroundTint="#009dc4"/>
+        android:backgroundTint="#009dc4" />
 
     <Button
         android:id="@+id/purple_button"
+        android:contentDescription="@string/color_purple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dark_blue_button"
@@ -241,5 +241,20 @@
         android:layout_toEndOf="@+id/ocean_blue_button"
         android:backgroundTint="#800080"
         tools:ignore="VisualLintButtonSize" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ocean_blue_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/infrared_remote"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"/>
 
 </RelativeLayout>
