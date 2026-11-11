@@ -1,6 +1,5 @@
 package com.example.mymiata
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,25 +18,17 @@ class LoginActivity : AppCompatActivity() {
         val loginButton: Button = findViewById(R.id.loginButton)
 
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
-            val licensePlate = licensePlateEditText.text.toString()
+            val username = usernameEditText.text.toString().trim()
+            val licensePlate = licensePlateEditText.text.toString().trim().uppercase()
             val phoneNumber = phoneNumberEditText.text.toString().trim()
-            if (username.isNotEmpty() && licensePlate.isNotEmpty()) {
-                // Save username to SharedPreferences
-                val sharedPref = getSharedPreferences("MyMiataPrefs", Context.MODE_PRIVATE)
-                with(sharedPref.edit()) {
-                    putString("username", username)
-                    putString("licensePlate", licensePlate)
-                    putString("phone_number", phoneNumber)
-                    apply()
-                }
 
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else {
-                // Handle empty username case, e.g., show a Toast message
-            }
+            if (username.isEmpty()) usernameEditText.error = getString(R.string.error_required)
+            if (licensePlate.isEmpty()) licensePlateEditText.error = getString(R.string.error_required)
+            if (username.isEmpty() || licensePlate.isEmpty()) return@setOnClickListener
+
+            UserPrefs(this).save(username, licensePlate, phoneNumber)
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }

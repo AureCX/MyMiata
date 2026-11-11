@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Android 15 forces edge-to-edge for apps targeting SDK 35. The layouts don't handle
+        window insets yet, so opt out for now. This opt-out is ignored when targeting SDK 36:
+        handle insets (ViewCompat.setOnApplyWindowInsetsListener) before bumping targetSdk.
+    -->
+    <style name="Theme.MyMiata" parent="Base.Theme.MyMiata">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+
+    <style name="Theme.MyMiata.Splash" parent="Base.Theme.MyMiata.Splash">
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
+</resources>
