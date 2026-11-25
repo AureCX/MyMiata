@@ -39,13 +39,8 @@ class IRRemoteActivity : AppCompatActivity() {
         val purpleButton: Button = findViewById(R.id.purple_button)
 
         powerButton.setOnClickListener {
-            sendIrSignal(0x10EFD827) // Replace with your device's IR code
-        }
-
-        powerButton.setOnClickListener {
-            // Handle power button click
             showToast("Power button clicked")
-            // Implement your action here
+            sendIrSignal(0x10EFD827)
         }
 
         speedPlusButton.setOnClickListener {
@@ -164,12 +159,6 @@ class IRRemoteActivity : AppCompatActivity() {
             }
         } else {
             Toast.makeText(this, "No IR emitter found on this device", Toast.LENGTH_SHORT).show()
-        }
-        val backButton: Button = findViewById(R.id.button_back)
-        backButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
         }
     }
     private fun showToast(message: String) {

@@ -64,7 +64,6 @@ dependencies {
     implementation(libs.play.services.maps.v1802)
     implementation (libs.androidx.appcompat.v142)
     implementation (libs.material)
-    implementation (libs.androidx.constraintlayout)
     implementation(libs.androidx.activity)
     implementation(libs.sceneview)
     testImplementation(libs.junit)
