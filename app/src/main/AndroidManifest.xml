@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mymiata">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.TRANSMIT_IR" />
+
+    <!-- The IR remote screen degrades gracefully on phones without an IR blaster. -->
+    <uses-feature
+        android:name="android.hardware.consumerir"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -16,26 +19,28 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.MyMiata.Splash"
+            tools:ignore="CustomSplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IRRemoteActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:exported="false" />
+        <activity
+            android:name=".IRRemoteActivity"
+            android:exported="false" />
 
-        </activity>
-
-
+        <!-- Set MAPS_API_KEY in local.properties; see README. -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="${mapsApiKey}" />
     </application>
 
 </manifest>
