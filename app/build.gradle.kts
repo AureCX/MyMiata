@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -40,9 +41,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -64,7 +62,6 @@ dependencies {
     implementation(libs.play.services.maps.v1802)
     implementation (libs.androidx.appcompat.v142)
     implementation (libs.material)
-    implementation (libs.androidx.constraintlayout)
     implementation(libs.androidx.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
