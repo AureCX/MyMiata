@@ -1,38 +1,56 @@
 <resources>
     <string name="app_name">MyMiata</string>
-    <string name="my_miata">My Miata</string>
-    <string name="car_image_description">Car Logo</string>
-    <string name="car_side_view_description">Car Side View</string>
-    <string name="welcome_username">Welcome %1$s!</string>
-    <string name="login">Login</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="button">Button</string>
-    <string name="plaque_vide">plaque_vide</string>
-    <string name="enter_text_here">Enter text here</string>
+
+    <!-- Login -->
+    <string name="login_title">Welcome to MyMiata!</string>
+    <string name="login_subtitle">To ensure the best experience, please provide the following information:</string>
     <string name="enter_your_username">Enter your username</string>
-    <string name="welcome_user">Welcome User!</string>
-    <string name="welcome">Welcome %1$s!</string>
-    <string name="license_plate">License Plate:</string>
     <string name="enter_your_license_plate">Enter your license plate</string>
+    <string name="enter_your_emergency_service_number">Enter your emergency service number</string>
+    <string name="login">Login</string>
+    <string name="error_required">Required</string>
+
+    <!-- Dashboard -->
+    <string name="welcome_username">Welcome %1$s!</string>
+    <string name="my_miata">My Miata</string>
+    <string name="car_logo_description">Mazda logo</string>
+    <string name="car_side_view_description">Car side view</string>
+    <string name="license_plate_background_description">License plate</string>
+    <string name="license_plate">License Plate:</string>
+    <string name="show_license_plate">Show license plate</string>
+    <string name="open_ir_remote">Open IR remote</string>
+    <string name="location_map">Location map</string>
+    <string name="car_location">Car location</string>
+    <string name="popuptext">Map</string>
     <string name="logout">Log out</string>
+    <string name="logged_out">Successfully logged out</string>
+    <string name="emergency">Emergency</string>
+    <string name="phone_number_unavailable">Phone number not available</string>
+    <string name="no_dialer">No phone app available</string>
+
+    <!-- IR remote -->
+    <string name="infrared_remote">InfraRed remote</string>
     <string name="button_power">Power</string>
     <string name="button_speed_plus">Speed +</string>
-    <string name="button_mode_plus">Mode +</string>
     <string name="button_speed_minus">Speed -</string>
-    <string name="button_color_plus">Color +</string>
-    <string name="button_demo">Demo</string>
+    <string name="button_mode_plus">Mode +</string>
     <string name="button_mode_minus">Mode -</string>
+    <string name="button_color_plus">Color +</string>
     <string name="button_color_minus">Color -</string>
     <string name="button_bright_plus">Bright +</string>
     <string name="button_bright_minus">Bright -</string>
+    <string name="button_demo">Demo</string>
     <string name="button_back">Back</string>
     <string name="x">X</string>
-    <string name="infrared_remote">InfraRed remote</string>
-    <string name="emergency">Emergency</string>
-    <string name="enter_your_emergency_service_number">Enter your emergency service number</string>
-    <string name="carte_de_localisation">Carte de localisation</string>
-    <string name="popuptext">Map</string>
-
+    <string name="color_white">White</string>
+    <string name="color_red">Red</string>
+    <string name="color_green">Green</string>
+    <string name="color_dark_blue">Dark blue</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_ocean_blue">Ocean blue</string>
+    <string name="color_purple">Purple</string>
+    <string name="no_ir_emitter">No IR emitter found on this device</string>
+    <string name="ir_signal_sent">%1$s sent</string>
+    <string name="ir_signal_failed">Failed to send IR signal: %1$s</string>
+    <string name="ir_code_not_configured">No IR code configured for %1$s yet</string>
 </resources>
