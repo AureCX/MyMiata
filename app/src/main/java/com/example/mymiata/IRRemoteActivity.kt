@@ -79,8 +79,8 @@ class IRRemoteActivity : AppCompatActivity() {
     }
 
     private data class RemoteButton(
-        @IdRes val viewId: Int,
-        @StringRes val label: Int,
+        @param:IdRes val viewId: Int,
+        @param:StringRes val label: Int,
         val necCode: Long?,
     )
 }
