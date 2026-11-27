@@ -35,10 +35,11 @@ class MainActivity : AppCompatActivity() {
         val carModelButton: Button = findViewById(R.id.carModelTextView)
         val licensePlateButton: Button = findViewById(R.id.license_plate_button)
         val bubbleMenu: View = findViewById(R.id.bubbleMenu)
-        val bubbleMenu2: View = findViewById(R.id.bubbleMenu2)
+        val mainbubbleMenu: View = findViewById(R.id.MainbubbleMenu)
         val irRemoteButton: Button = findViewById(R.id.irRemoteButton)
         val logoutButton: Button = findViewById(R.id.logoutButton)
         val dialButton: Button = findViewById(R.id.button_dial)
+        val settingsButton: Button = findViewById(R.id.SettingsButton)
         mapView = findViewById(R.id.mapView)
 
         welcomeTextView.text = getString(R.string.welcome_username, userPrefs.username)
@@ -47,10 +48,11 @@ class MainActivity : AppCompatActivity() {
         irRemoteButton.setOnClickListener {
             startActivity(Intent(this, IRRemoteActivity::class.java))
         }
-        carModelButton.setOnClickListener { bubbleMenu2.toggleVisibility() }
+        carModelButton.setOnClickListener { mainbubbleMenu.toggleVisibility() }
         licensePlateButton.setOnClickListener { bubbleMenu.toggleVisibility() }
         logoutButton.setOnClickListener { logout() }
         dialButton.setOnClickListener { openPhoneDialer(userPrefs.emergencyNumber) }
+        settingsButton.setOnClickListener { Toast.makeText(this, "Settings button clicked", Toast.LENGTH_SHORT).show() }
 
         // MapView requires every lifecycle callback to be forwarded (see overrides below).
         mapView.onCreate(savedInstanceState?.getBundle(MAP_VIEW_STATE_KEY))

@@ -137,7 +137,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/bubbleMenu2"
+        android:id="@+id/MainbubbleMenu"
         android:layout_width="119dp"
         android:layout_height="121dp"
         android:layout_marginTop="12dp"
@@ -166,6 +166,26 @@
             android:textColor="@android:color/black"
             android:textSize="20sp"
             tools:ignore="VisualLintBounds" />
+
+        <!-- Button to have access to the settings page -->
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textAllCaps="false"
+            android:letterSpacing="0"
+            android:fontFamily="sans-serif"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:id="@+id/SettingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/settings"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 
